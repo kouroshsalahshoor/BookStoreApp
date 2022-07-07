@@ -1,4 +1,6 @@
-﻿namespace BookStoreApp.Api.Data
+﻿using System.Text.Json.Serialization;
+
+namespace BookStoreApp.Api.Data
 {
     public class Author
     {
@@ -7,6 +9,7 @@
         public string LastName { get; set; }
         public string Bio { get; set; }
 
-        public List<Book> Books { get; set; }
+        [JsonIgnore]
+        public List<Book> Books { get; set; } = new List<Book>();
     }
 }
