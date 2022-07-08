@@ -17,7 +17,7 @@ namespace BookStoreApp.Api.Data
         public decimal Price { get; set; }
 
         public int AuthorId { get; set; }
-        [JsonIgnore]
+        //[JsonIgnore]
         public Author? Author { get; set; }
     }
 }

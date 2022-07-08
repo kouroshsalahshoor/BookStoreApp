@@ -9,7 +9,7 @@ namespace BookStoreApp.Api.Data
         public string LastName { get; set; }
         public string Bio { get; set; }
 
-        [JsonIgnore]
+        //[JsonIgnore]
         public List<Book> Books { get; set; } = new List<Book>();
     }
 }

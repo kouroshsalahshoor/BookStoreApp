@@ -28,7 +28,9 @@ namespace BookStoreApp.Api.Controllers
             {
                 return NotFound();
             }
-            return await _context.Books.ToListAsync();
+            var models = await _context.Books.Include(x=>x.Author).ToListAsync();
+            models.ForEach(x => x.Author.Books = null);
+            return models;
         }
 
         // GET: api/Books/5
@@ -39,12 +41,14 @@ namespace BookStoreApp.Api.Controllers
             {
                 return NotFound();
             }
-            var book = await _context.Books.FindAsync(id);
+            var book = await _context.Books.Include(x=>x.Author).SingleOrDefaultAsync(x=>x.Id == id);
 
             if (book == null)
             {
                 return NotFound();
             }
+
+            book.Author.Books = null;
 
             return book;
         }
