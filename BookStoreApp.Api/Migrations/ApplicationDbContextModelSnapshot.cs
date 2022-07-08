@@ -43,7 +43,7 @@ namespace BookStoreApp.Api.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("Authors");
+                    b.ToTable("Authors", (string)null);
                 });
 
             modelBuilder.Entity("BookStoreApp.Api.Data.Book", b =>
@@ -87,7 +87,7 @@ namespace BookStoreApp.Api.Migrations
                     b.HasIndex("Isbn")
                         .IsUnique();
 
-                    b.ToTable("Books");
+                    b.ToTable("Books", (string)null);
                 });
 
             modelBuilder.Entity("BookStoreApp.Api.Data.Book", b =>

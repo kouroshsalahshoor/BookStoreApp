@@ -18,6 +18,6 @@ namespace BookStoreApp.Api.Data
 
         public int AuthorId { get; set; }
         [JsonIgnore]
-        public Author Author { get; set; } = new Author();
+        public Author? Author { get; set; }
     }
 }
